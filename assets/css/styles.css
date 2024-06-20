@@ -1,14 +1,46 @@
+@font-face {
+    font-family: 'Karla-Regular';
+    src: url('../fonts/static/Karla-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Karla-Bold';
+    src: url('../fonts/static/Karla-Bold.ttf') format('truetype');
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Karla-Regular';
     margin: 50px;
 }
 
 form {
-    max-width: 500px;
+    width: 550px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-row > div {
+    width: 48%;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 label {
@@ -16,24 +48,25 @@ label {
     margin-top: 10px;
 }
 
-input,
-textarea {
+input, textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .checkbox-group {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
     margin-top: 10px;
 }
 
 .checkbox-group label {
     display: flex;
     align-items: center;
+    margin-top: 5px;
 }
 
 .checkbox-group input {
@@ -60,8 +93,17 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    font-size: 0.875em;
+    display: none;
 }
