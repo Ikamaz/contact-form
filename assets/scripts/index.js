@@ -13,7 +13,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         isValid = false;
     }
 
-    // Validate last name
     const lastName = document.getElementById('last-name');
     if (lastName.value.trim() === '') {
         document.getElementById('lastNameError').style.display = 'block';

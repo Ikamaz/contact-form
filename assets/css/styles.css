@@ -11,11 +11,13 @@
 body {
     font-family: 'Karla-Regular';
     margin: 50px;
+    background-color: hsl(144.71,37.78%,91.18%)  ;
 }
 
 form {
     width: 550px;
     margin: auto;
+    background-color: white;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -59,19 +61,54 @@ input, textarea {
 
 .checkbox-group {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     margin-top: 10px;
 }
 
-.checkbox-group label {
+.checkbox-button {
+    flex: 1;
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    justify-content: center;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    position: relative;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
 }
 
-.checkbox-group input {
-    width: auto;
-    margin-right: 5px;
+.checkbox-button:last-child {
+    margin-right: 0;
+}
+
+.checkbox-button input {
+    display: none;
+}
+
+.checkbox-button .checkbox-mark {
+    display: none;
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+    color: hsl(169, 82%, 27%);
+}
+
+.checkbox-button input:checked + .checkbox-mark {
+    display: block;
+}
+
+.checkbox-button input:checked + .checkbox-mark + label {
+    background-color: hsl(169, 82%, 27%);
+    color: white;
+}
+
+.checkbox-button input:checked + .checkbox-mark + span {
+    background-color: hsl(169, 82%, 27%);
+    color: white;
 }
 
 .consent {
@@ -88,7 +125,7 @@ input, textarea {
 button {
     padding: 10px 20px;
     margin-top: 20px;
-    background-color: #007BFF;
+    background-color: hsl(169, 82%, 27%);
     color: white;
     border: none;
     border-radius: 5px;
@@ -99,7 +136,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: hsl(169, 82%, 17%);
 }
 
 .error {
