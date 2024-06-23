@@ -200,10 +200,9 @@ button:hover {
     margin-top: 4px;
 }
 
-/* Media query for responsiveness */
-@media (max-width: 375px) {
+@media (max-width: 768px) {
     body {
-        margin: 10px;
+        margin: 30px;
     }
 
     form {
@@ -235,7 +234,52 @@ button:hover {
     button {
         padding: 15px;
     }
-    .message{
+
+    .message {
         height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 20px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    .message {
+        height: 180px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        margin: 10px;
+    }
+
+    form {
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    .message {
+        height: 150px;
     }
 }
