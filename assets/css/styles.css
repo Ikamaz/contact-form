@@ -20,9 +20,9 @@ form {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: white; /* White background for the form */
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: margin-top 0.3s; /* Smooth transition for margin-top */
+    transition: margin-top 0.3s;
 }
 
 h2 {
