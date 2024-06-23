@@ -11,23 +11,66 @@
 body {
     font-family: 'Karla-Regular';
     margin: 50px;
-    background-color: hsl(144.71,37.78%,91.18%)  ;
+    background-color: hsl(148, 38%, 91%);
 }
 
 form {
-    width: 550px;
+    max-width: 550px;
     margin: auto;
-    background-color: white;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-sizing: border-box;
+    background-color: white; /* White background for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: margin-top 0.3s; /* Smooth transition for margin-top */
 }
 
 h2 {
     text-align: left;
     margin-bottom: 20px;
     margin-top: 0;
+}
+
+.success {
+    display: none;
+    background-color: hsl(187, 24%, 22%);
+    width: 400px;
+    color: white;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: 80px;
+}
+.success-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+}
+.flex-success {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sent {
+    font-family: 'Karla-Bold';
+    font-size: 15px;
+}
+
+.thanks-txt {
+    font-size: 14px;
+    font-family: 'Karla-Regular';
+    font-weight: 200;
+    letter-spacing: 0.5px;
+    margin: 0 auto;
 }
 
 .form-row {
@@ -61,8 +104,9 @@ input, textarea {
 
 .checkbox-group {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .checkbox-button {
@@ -71,7 +115,6 @@ input, textarea {
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
@@ -79,10 +122,6 @@ input, textarea {
     position: relative;
     box-sizing: border-box;
     transition: background-color 0.3s;
-}
-
-.checkbox-button:last-child {
-    margin-right: 0;
 }
 
 .checkbox-button input {
@@ -111,6 +150,20 @@ input, textarea {
     color: white;
 }
 
+.checkbox-group .error {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.message{
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+}
+
 .consent {
     display: flex;
     align-items: center;
@@ -123,6 +176,7 @@ input, textarea {
 }
 
 button {
+    font-family: 'Karla-Bold';
     padding: 10px 20px;
     margin-top: 20px;
     background-color: hsl(169, 82%, 27%);
@@ -136,11 +190,52 @@ button {
 }
 
 button:hover {
-    background-color: hsl(169, 82%, 17%);
+    background-color: hsl(169, 81%, 19%);
 }
 
 .error {
     color: red;
     font-size: 0.875em;
     display: none;
+    margin-top: 4px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 375px) {
+    body {
+        margin: 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row > div {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .checkbox-button {
+        width: 100%;
+    }
+
+    .checkbox-group .error {
+        margin-top: 5px;
+    }
+
+    button {
+        padding: 15px;
+    }
+    .message{
+        height: 200px;
+    }
 }

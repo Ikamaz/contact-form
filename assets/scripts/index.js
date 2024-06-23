@@ -46,6 +46,18 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     }
 
     if (isValid) {
-        this.submit();
+        const successMessage = document.getElementById('success-message');
+        successMessage.style.display = 'block';
+
+        // Adjust the form's margin to make space for the success message
+        document.querySelector('form').style.marginTop = '100px';
+
+        // Reset the form
+        document.getElementById('contact-form').reset();
+
+        setTimeout(function() {
+            successMessage.style.display = 'none';
+            document.querySelector('form').style.marginTop = '0';
+        }, 5000);
     }
 });
