@@ -168,11 +168,37 @@ input, textarea {
     display: flex;
     align-items: center;
     margin-top: 10px;
+    font-size: 16px;
 }
 
-.consent input {
-    width: auto;
-    margin-right: 5px;
+.consent input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.consent input[type="checkbox"]:checked {
+    background-color: hsl(169, 82%, 27%);
+    border-color: hsl(169, 82%, 27%);
+}
+
+.consent input[type="checkbox"]:checked::before {
+    content: '\2713';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 button {
@@ -281,5 +307,9 @@ button:hover {
 
     .message {
         height: 150px;
+
+    }
+    .success {
+        width: 300px;
     }
 }
